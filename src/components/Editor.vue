@@ -106,6 +106,7 @@
 
 <style lang="scss">
   .editor {
+    margin: 50px 0;
     .hint {
       p {
         margin: 20px 0 30px;

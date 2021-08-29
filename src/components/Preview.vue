@@ -1,6 +1,7 @@
 <template>
   <div class="preview">
     <div id="img">
+      <img src="../assets/iphone.svg" alt="iphone" />
       <article>
         <h3 v-html="obj.title"></h3>
         <p class="se-wrapper-inner se-wrapper-wysiwyg sun-editor-editable" v-html="obj.contents"></p>
@@ -18,30 +19,29 @@
 
 <style lang="scss" scoped>
   .preview {
-    margin-bottom: 50px;
+    position: relative;
     #img {
+      display: inline-block;
       position: relative;
-      background-image: url("../assets/iphone.svg");
-      background-repeat: no-repeat;
-      background-size: 100% auto;
-      background-position: center top;
-      margin: 0 auto;
-      height: 625px;
-      width: 100%;
-      max-width: 320px;
+      transform: translateX(-50%);
+      left: 50%;
+
+      img {
+        display: block;
+        width: 100%;
+      }
 
       article {
         position: absolute;
-        top: 90px;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        width: calc(100% * 0.8);
-        padding: 10px;
-        box-sizing: border-box;
-        max-height: calc(450px - 20px);
+        top: 80px;
+        left: 30px;
         overflow: auto;
         border-radius: 25px;
+        width: calc(100% - 60px);
+        height: calc(100% - 175px);
+        box-sizing: border-box;
+        background: #fff;
+        padding: 10px;
 
         &::-webkit-scrollbar {
           width: 5px;
@@ -64,6 +64,8 @@
         p {
           font-size: inherit;
           color: #000;
+          padding: 0;
+          margin: 0;
         }
       }
     }

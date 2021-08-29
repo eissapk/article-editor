@@ -1,14 +1,18 @@
 @mixin mediaQuery {
   @media (min-width: 768px) {
+    #app {
+      padding: 20px !important;
+      grid-template-columns: 1fr 1fr !important;
+    }
     .editor {
-      float: left;
+      grid-column: 1/2;
+      grid-row: 1/2;
+      margin: 0 !important;
+      margin-right: 70px !important;
     }
     .preview {
-      float: right;
-    }
-    .editor,
-    .preview {
-      width: 50%;
+      grid-column: 2/3;
+      grid-row: 1/2;
     }
   }
 }
