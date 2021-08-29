@@ -1,0 +1,14 @@
+@mixin mediaQuery {
+  @media (min-width: 768px) {
+    .editor {
+      float: left;
+    }
+    .preview {
+      float: right;
+    }
+    .editor,
+    .preview {
+      width: 50%;
+    }
+  }
+}

@@ -1,28 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Preview :obj="obj" />
+    <Editor @editor-change="update" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  import Preview from "../src/components/Preview";
+  import Editor from "../src/components/Editor";
+  export default {
+    name: "App",
+    components: { Preview, Editor },
+    data() {
+      return {
+        obj: {
+          title: "Text",
+          contents:
+            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+        },
+      };
+    },
+    methods: {
+      update(obj) {
+        this.obj = obj;
+      },
+    },
+  };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import "../src/app.scss";
 </style>

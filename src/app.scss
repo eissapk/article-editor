@@ -1,0 +1,31 @@
+@import "../src/styles/normalize.scss";
+@import "../src/styles/mediaQuery.scss";
+@import "../src/styles/suneditor.min.scss";
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #000;
+  letter-spacing: 0.5px;
+
+  #app {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    @include mediaQuery;
+  }
+}
+
+svg {
+  pointer-events: none;
+}
